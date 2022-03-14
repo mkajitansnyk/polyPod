@@ -1,0 +1,16 @@
+.htrt-container {
+  max-width: var(--max-width);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: var( --color-contrast-white);
+  color: var(--color-dark);
+  z-index: 100;
+  overflow: hidden scroll;
+  padding: 24px 16px 16px;
+  box-sizing: border-box;
+}
+
+.htrt-container .poly-button {
+  width: 100%;
+}
