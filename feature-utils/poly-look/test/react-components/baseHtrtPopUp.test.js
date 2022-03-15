@@ -1,7 +1,7 @@
 import React from "react";
 import { render, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import BaseHtrtPopUp from "../../src/react-components/htrtPopUp/BaseHtrtPopUp";
+import BaseHtrtPopUp from "../../src/react-components/htrtPopUp/baseHtrtPopUp";
 
 /**
  * @jest-environment jsdom
