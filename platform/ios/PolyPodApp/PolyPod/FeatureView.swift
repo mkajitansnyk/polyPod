@@ -90,7 +90,10 @@ struct FeatureView: View {
             preferredStyle: .alert
         )
         alert.addAction(UIAlertAction(
-            title: "OK",
+            title: NSLocalizedString(
+                "button_error_report",
+                comment: ""
+            ),
             style: .default,
             handler: { (action: UIAlertAction!) in
                 closeAction()
