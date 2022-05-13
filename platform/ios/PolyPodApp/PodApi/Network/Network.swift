@@ -37,7 +37,7 @@ final class Network: NetworkProtocol {
         return httpFetchCall(type: "GET", url: url, body: nil, contentType: contentType, authToken: authToken, allowInsecure: allowInsecure)
     }
     
-    func httpFetchCall(
+    private func httpFetchCall(
         type: String,
         url: String,
         body: String?,
