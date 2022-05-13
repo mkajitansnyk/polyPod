@@ -55,6 +55,8 @@ jobs:
         env:
           POLYPOD_POLYPEDIA_REPORT_URL: ${{ secrets.POLYPOD_POLYPEDIA_REPORT_URL }}
           POLYPOD_POLYPEDIA_REPORT_AUTHORIZATION: ${{ secrets.POLYPOD_POLYPEDIA_REPORT_AUTHORIZATION }} || ""
+          POLYPOD_ERROR_REPORT_URL: ${{ secrets.POLYPOD_ERROR_REPORT_URL }}
+          POLYPOD_ERROR_REPORT_AUTHORIZATION: ${{ secrets.POLYPOD_ERROR_REPORT_AUTHORIZATION }} || ""
         run: ./build.js
       - name: Android - Test
         working-directory: platform/android
