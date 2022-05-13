@@ -25,17 +25,6 @@ final class Endpoint: EndpointProtocol {
     let network: Network = Network()
     var delegate: EndpointDelegate?
     
-    func approveEndpointFetch(endpointId: String, completion: @escaping (Bool) -> Void) -> Void {
-        delegate?.doHandleApproveEndpointFetch(endpointId: endpointId, completion: completion)
-    }
-    
-    private func endpointInfoFromId(endpointId: String) -> EndpointInfo? {
-        let endpointsPath = Bundle.main.bundleURL
-            .appendingPathComponent("config/endpoints.json")
-        guard let endpointsJsonData = (try? Data(contentsOf: endpointsPath)) else { return nil }
-        guard let endpointsJson = (try? JSONDecoder().decode(Dictionary<String, EndpointInfo>.self, from: endpointsJsonData)) else { return nil }
-        return endpointsJson[endpointId]
-    }
     
     func send(endpointId: String, payload: String, contentType: String?, authToken: String?, completionHandler: @escaping (Error?) -> Void) -> Void {
         approveEndpointFetch(endpointId: endpointId) { approved in
@@ -82,4 +71,17 @@ final class Endpoint: EndpointProtocol {
             }
         }
     }
+
+    private func approveEndpointFetch(endpointId: String, completion: @escaping (Bool) -> Void) -> Void {
+        delegate?.doHandleApproveEndpointFetch(endpointId: endpointId, completion: completion)
+    }
+
+    private func endpointInfoFromId(endpointId: String) -> EndpointInfo? {
+        let endpointsPath = Bundle.main.bundleURL
+            .appendingPathComponent("config/endpoints.json")
+        guard let endpointsJsonData = (try? Data(contentsOf: endpointsPath)) else { return nil }
+        guard let endpointsJson = (try? JSONDecoder().decode(Dictionary<String, EndpointInfo>.self, from: endpointsJsonData)) else { return nil }
+        return endpointsJson[endpointId]
+    }
+
 }
