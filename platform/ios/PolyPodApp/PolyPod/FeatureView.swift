@@ -97,7 +97,10 @@ struct FeatureView: View {
             style: .default,
             handler: { (action: UIAlertAction!) in
                 closeAction()
-                ErrorUploader.shared.uploadToServer(errorMsg)
+                ErrorUploader.shared.uploadToServer(errorMsg, completionHandler: { response, error in
+                            print("response $response $error")
+                            //self.completeEvent(messageId: messageId, response: response, error: error, completionHandler: completionHandler)
+                })
             }
         ))
         UIApplication.shared.windows.first!.rootViewController!.present(
