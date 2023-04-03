@@ -7,8 +7,8 @@
   },
   "devDependencies": {
     "@storybook/addon-actions": "^6.4.19",
-    "@storybook/addon-essentials": "^6.4.19",
-    "@storybook/addon-interactions": "^6.4.19",
+    "@storybook/addon-essentials": "^7.0.0",
+    "@storybook/addon-interactions": "^7.0.0",
     "@storybook/react": "^6.4.19",
     "@web/dev-server": "^0.1.30",
     "@web/dev-server-rollup": "^0.3.15",
